@@ -24,7 +24,6 @@ header h1 {
     margin: 0;
 }
 
-/* Navigation */
 nav ul {
     background: #444;
     text-align: center;
@@ -32,7 +31,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block; /* Change this to inline-block */
 }
 
 nav ul li a {
