@@ -54,13 +54,95 @@ main img {
     width: 50%;
 }
 
+main ul {
+    list-style: none; /* Ajoutez cette ligne pour enlever les puces */
+}
+
 main ul li {
     margin-left: 30px;
 }
 
+.recipe_link {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px 0;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.recipe_link:hover {
+    background-color: #444;
+}
+
+.recipe_section {
+    padding: 0px;
+    margin: auto;
+    text-align: start;
+}
+
+.title {
+    padding: 40px 0px;
+}
+
+form {
+    width: 595px;
+    height: 842px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.form_container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    min-height: 0;
+    overflow: hidden;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    resize: vertical;
+
+}
+
+form textarea {
+    resize: none;
+}
+
+.submit_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 60px;
+    width: 100px;
+    border-radius: 15px;
+    color: #ddd;
+    background-color: #444;
+    border: none;
+    transition: .5s;
+}
+
+.submit_button:hover{
+    background-color: #333;
+}
+
 /* Pied de page */
 footer {
+    margin-top: auto;
     background-color: #333;
     color: white;
     text-align: center;
+    padding: 10px 0;
 }
