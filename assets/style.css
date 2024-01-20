@@ -54,10 +54,6 @@ main img {
     width: 50%;
 }
 
-main ul {
-    list-style: none; /* Ajoutez cette ligne pour enlever les puces */
-}
-
 main ul li {
     margin-left: 30px;
 }
@@ -83,59 +79,71 @@ main ul li {
     text-align: start;
 }
 
+.recipe-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.recipe-item::before {
+    content: '\2022';
+    color: #333;
+    margin-right: 5px;
+}
+
 .title {
     padding: 40px 0px;
 }
 
-form {
-    width: 595px;
-    height: 842px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-.form_container {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-    min-height: 0;
-    overflow: hidden;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form textarea {
-    resize: vertical;
-
-}
-
-form textarea {
-    resize: none;
-}
-
-.submit_button {
+/* Formulaire */
+.form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    height: 60px;
-    width: 100px;
-    border-radius: 15px;
-    color: #ddd;
-    background-color: #444;
-    border: none;
-    transition: .5s;
+    min-height: 100vh;
 }
 
-.submit_button:hover{
-    background-color: #333;
+.form {
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form label {
+    font-weight: bold;
+}
+
+.form input[type="text"],
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    height: 40px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
 }
 
 /* Pied de page */
