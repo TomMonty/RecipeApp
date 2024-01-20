@@ -8,10 +8,12 @@ include 'templates/header.php';
 
 <img src="https://st.depositphotos.com/1570716/1697/i/950/depositphotos_16978587-stock-photo-male-chef-cooking.jpg" alt="">
 
-<div>
-    <a href="recipes.php">Par ici les recettes!</a>
-    <a href="create_recipe.php">Créer une nouvelle recette</a>
-</div>
+<nav>
+    <div>
+        <a href="recipes.php">Par ici les recettes!</a>
+        <a href="create_recipe.php">Créer une nouvelle recette</a>
+    </div>
+</nav>
 
 <?php
 include 'templates/footer.php';

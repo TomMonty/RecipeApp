@@ -85,7 +85,7 @@ main ul li {
 }
 
 .recipe-item::before {
-    content: '\2022';
+    content: "\2022";
     color: #333;
     margin-right: 5px;
 }
