@@ -8,13 +8,13 @@ $recipe = getRecipe($recipeId);
 
 if ($recipe) {
     echo '<div class="recipe_section">';
-    echo '<h1>' . htmlspecialchars($recipe['title']) . '</h1>';
-    echo '<p>' . htmlspecialchars($recipe['description']) . '</p>';
+    echo '<h1>' . htmlspecialchars($recipe['title'], ENT_QUOTES, 'UTF-8') . '</h1>';
+    echo '<p>' . htmlspecialchars($recipe['description'], ENT_QUOTES, 'UTF-8') . '</p>';
     echo '<h2>Ingrédients</h2>';
     echo '<ul class="recipe-list">';
     $ingredients = explode(";", $recipe['ingredients']);
     foreach ($ingredients as $ingredient) {
-        echo '<li class="recipe-item">' . htmlspecialchars($ingredient) . '</li>';
+        echo '<li class="recipe-item">' . htmlspecialchars($ingredient, ENT_QUOTES, 'UTF-8') . '</li>';
     }
     echo '</ul>';
     echo '<h2>Étapes de préparation</h2>';
@@ -22,7 +22,7 @@ if ($recipe) {
     if (isset($recipe['steps'])) {
         $steps = explode(";", $recipe['steps']);
         foreach ($steps as $step) {
-            echo '<li class="recipe-item">' . htmlspecialchars($step) . '</li>';
+            echo '<li class="recipe-item">' . htmlspecialchars($step, ENT_QUOTES, 'UTF-8') . '</li>';
         }
     }
     echo '</ol>';

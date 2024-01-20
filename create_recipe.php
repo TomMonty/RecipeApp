@@ -13,16 +13,13 @@ include 'app/functions.php';
 <body>
 
     <?php
-    include 'templates/header.php';
-    include 'app/functions.php';
-
     global $pdo;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $title = $_POST['title'];
-        $description = $_POST['description'];
-        $ingredients = implode(",", $_POST['ingredients']);
-        $steps = implode(",", $_POST['steps']);
+        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+        $ingredients = implode(",", array_map('trim', $_POST['ingredients']));
+        $steps = implode(",", array_map('trim', $_POST['steps']));
 
         // Exclude 'id' from the columns to insert
         $sql = "INSERT INTO recipes (title, description, ingredients, steps) VALUES (:title, :description, :ingredients, :steps)";

@@ -10,6 +10,7 @@ include 'templates/header.php';
 
 <div>
     <a href="recipes.php">Par ici les recettes!</a>
+    <a href="create_recipe.php">Créer une nouvelle recette</a>
 </div>
 
 <?php

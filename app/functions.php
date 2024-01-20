@@ -1,6 +1,10 @@
 <?php
 include 'config/database.php';
 
+/**
+ * Fetch all recipes from the database.
+ * @return array An array of recipes.
+ */
 function getAllRecipes()
 {
     global $pdo;
@@ -19,7 +23,11 @@ function getAllRecipes()
     }
 }
 
-
+/**
+ * Fetch a specific recipe from the database.
+ * @param int $id The ID of the recipe.
+ * @return array The recipe data.
+ */
 function getRecipe($id)
 {
     global $pdo;
