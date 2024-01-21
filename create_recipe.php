@@ -29,25 +29,28 @@ include 'app/functions.php';
         header("Location: index.php");
     }
     ?>
+    <div id="create_recipe_form">
+        <h1 class="title">Création de Recette :</h1>
+        <form method="post">
+            <div class="form_container">
+                <label for="title">Titre:</label>
+                <input type="text" id="title" name="title">
 
-    <h1 class="title">Création de Recette :</h1>
-    <form method="post">
-        <div class="form_container">
-            <label for="title">Titre:</label>
-            <input type="text" id="title" name="title">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="2"></textarea>
 
-            <label for="description">Description:</label>
-            <textarea id="description" name="description"></textarea>
+                <label for="ingredients">Ingrédients:</label>
+                <p>Pour séparer chaque ingrédient, utilisez un point-virgule.</p>
+                <textarea id="ingredients" name="ingredients[]" rows="6"></textarea>
 
-            <label for="ingredients">Ingrédients:</label>
-            <textarea id="ingredients" name="ingredients[]" rows="4"></textarea>
+                <label for="steps">Étapes:</label>
+                <p>Pour séparer chaque étape, utilisez un point-virgule.</p>
+                <textarea id="steps" name="steps[]" rows="6"></textarea>
 
-            <label for="steps">Étapes:</label>
-            <textarea id="steps" name="steps[]" rows="4"></textarea>
-
-            <input class="submit_button" type="submit" value="Submit">
-        </div>
-    </form>
+                <input class="submit_button" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
 
     <?php
     include 'templates/footer.php';
