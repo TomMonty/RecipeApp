@@ -93,6 +93,14 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
+#index-page nav div a:hover {
+    background-color: #444;
+    border: 2px solid transparent;
+    box-shadow: 0px 8px 15px rgba(3, 3, 3, 0.7);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
 /* Recipes Page */
 
 #recipes-list h1 {

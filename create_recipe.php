@@ -21,7 +21,6 @@ include 'app/functions.php';
         $ingredients = implode(",", array_map('trim', $_POST['ingredients']));
         $steps = implode(",", array_map('trim', $_POST['steps']));
 
-        // Exclude 'id' from the columns to insert
         $sql = "INSERT INTO recipes (title, description, ingredients, steps) VALUES (:title, :description, :ingredients, :steps)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['title' => $title, 'description' => $description, 'ingredients' => $ingredients, 'steps' => $steps]);
@@ -40,11 +39,11 @@ include 'app/functions.php';
                 <textarea id="description" name="description" rows="2"></textarea>
 
                 <label for="ingredients">Ingrédients:</label>
-                <p>Pour séparer chaque ingrédient, utilisez un point-virgule.</p>
+                <p>Pour séparer chaque ingrédients, utilisez un point-virgule.</p>
                 <textarea id="ingredients" name="ingredients[]" rows="6"></textarea>
 
                 <label for="steps">Étapes:</label>
-                <p>Pour séparer chaque étape, utilisez un point-virgule.</p>
+                <p>Pour séparer chaque étapes, utilisez un point-virgule.</p>
                 <textarea id="steps" name="steps[]" rows="6"></textarea>
 
                 <input class="submit_button" type="submit" value="Submit">
