@@ -12,7 +12,7 @@ $allRecipes = getAllRecipes();
         <?php
         foreach ($allRecipes as $recipe) {
             $recipeId = $recipe['id'];
-            $recipeName = htmlspecialchars($recipe['title']);
+            $recipeName = htmlspecialchars($recipe['name']);
             echo "<li>";
             echo "<div class='recipe_item'>";
             echo "<a class='recipe_link' href='recipe.php?id=$recipeId'>$recipeName</a>";

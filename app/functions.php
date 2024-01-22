@@ -10,7 +10,7 @@ function getAllRecipes()
     global $pdo;
 
     try {
-        $sql = "SELECT id, title FROM recipes";
+        $sql = "SELECT id, name FROM recipes";
         $query = $pdo->prepare($sql);
 
         $query->execute();

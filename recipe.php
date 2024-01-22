@@ -8,7 +8,7 @@ $recipe = getRecipe($recipeId);
 
 if ($recipe) {
     echo '<div id="recipe_page">';
-    echo '<h1>' . htmlspecialchars($recipe['title'], ENT_QUOTES, 'UTF-8') . '</h1>';
+    echo '<h1>' . htmlspecialchars($recipe['name'], ENT_QUOTES, 'UTF-8') . '</h1>';
     echo '<p>' . htmlspecialchars($recipe['description'], ENT_QUOTES, 'UTF-8') . '</p>';
     echo '<h2>Ingrédients</h2>';
     echo '<ul class="recipe_list">';
