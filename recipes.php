@@ -6,14 +6,19 @@ $allRecipes = getAllRecipes();
 
 ?>
 
-<div id="recipes-list">
+<div id="recipes_list">
     <h1>Liste des Recettes :</h1>
     <ul>
         <?php
         foreach ($allRecipes as $recipe) {
             $recipeId = $recipe['id'];
             $recipeName = htmlspecialchars($recipe['title']);
-            echo "<li><a class='recipe_link' href='recipe.php?id=$recipeId'>$recipeName</a></li>";
+            echo "<li>";
+            echo "<div class='recipe_item'>";
+            echo "<a class='recipe_link' href='recipe.php?id=$recipeId'>$recipeName</a>";
+            echo "<a class='delete_btn' href='delete_recipe.php?id=$recipeId'>&#x2715;</a>"; // Add this line
+            echo "</div>";
+            echo "</li>";
         }
         ?>
     </ul>

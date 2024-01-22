@@ -46,3 +46,22 @@ function getRecipe($id)
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 }
+
+/**
+ * Delete a specific recipe from the database.
+ * @param int $id The ID of the recipe.
+ */
+function deleteRecipe($id)
+{
+    global $pdo;
+
+    try {
+        $sql = "DELETE FROM recipes WHERE id = :id";
+        $query = $pdo->prepare($sql);
+
+        $query->bindParam(':id', $id, PDO::PARAM_INT);
+        $query->execute();
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
+}
