@@ -16,7 +16,7 @@ $allRecipes = getAllRecipes();
             echo "<li>";
             echo "<div class='recipe_item'>";
             echo "<a class='recipe_link' href='recipe.php?id=$recipeId'>$recipeName</a>";
-            echo "<a class='delete_btn' href='delete_recipe.php?id=$recipeId'>&#x2715;</a>"; // Add this line
+            echo "<a class='delete_btn' href='delete_recipe.php?id=$recipeId'>&#x2715;</a>";
             echo "</div>";
             echo "</li>";
         }

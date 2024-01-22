@@ -16,24 +16,24 @@ include 'app/functions.php';
     global $pdo;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
         $ingredients = implode(",", array_map('trim', $_POST['ingredients']));
         $steps = implode(",", array_map('trim', $_POST['steps']));
 
-        $sql = "INSERT INTO recipes (title, description, ingredients, steps) VALUES (:title, :description, :ingredients, :steps)";
+        $sql = "INSERT INTO recipes (name, description, ingredients, steps) VALUES (:name, :description, :ingredients, :steps)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['title' => $title, 'description' => $description, 'ingredients' => $ingredients, 'steps' => $steps]);
+        $stmt->execute(['name' => $name, 'description' => $description, 'ingredients' => $ingredients, 'steps' => $steps]);
 
         header("Location: index.php");
     }
     ?>
     <div id="create_recipe_form">
-        <h1 class="title">Création de Recette :</h1>
+        <h1 class="name">Création de Recette :</h1>
         <form method="post">
             <div class="form_container">
-                <label for="title">Titre:</label>
-                <input type="text" id="title" name="title">
+                <label for="name">Titre:</label>
+                <input type="text" id="name" name="name">
 
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" rows="2"></textarea>
